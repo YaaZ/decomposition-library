@@ -1,5 +1,5 @@
 # decomposition-library
-##### Small and lightweight C++ library for polygon clipping and triangulation.
+**Small and lightweight C++ library for polygon clipping and triangulation.**
 
 It's split into few independent parts, allowing for easy testing and upgrading some pieces without affecting other ones.
 
@@ -88,6 +88,13 @@ for(const decomposition::PolygonWithHoles& polygon : polygonAreaTree) {
             decomposition::triangulatePolygonWithHoles(vertices, polygon);
 }
 ```
+
+## Fixes / Improvements
+* [ ] Add new stage for polygon-cleanup (removing zero-length edges, merging vertices)
+* [ ] Fix rare triangulation bug when many vertices touches at one point (must be fixed by previous stage)
+* [ ] Implement more efficient sweep-line algorithm for edge intersection finding
+* [ ] Speedup polygon tree building using adjacency info from polygon graph decomposition step
+* [ ] Implement more efficient trapezoidation algorithm for polygon triangulation
 
 # 
 
